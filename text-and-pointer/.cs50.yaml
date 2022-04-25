@@ -1,0 +1,8 @@
+check50:
+  files: &check50_files
+    - !exclude "*"
+    - !include text-pointer.c
+    - !include text-pointer
+
+submit50:
+  files: *check50_files
