@@ -22,11 +22,11 @@ def text_pointer():
     """Prints the text and its pointer"""
     test = check50.run("./text-pointer")
     test.stdin("Hello world")
-    test.stdout("The text is Hello world and the pointer is 0x\w{0,32}", regex=True).exit(0)
+    test.stdout("The text is Hello world and the pointer is 0x[0-9a-f]{4,32}", regex=True).exit(0)
 
 @check50.check(compiles)
 def number_pointer():
     """Can check and print number and its pointers"""
     test = check50.run("./text-pointer")
     test.stdin("84")
-    test.stdout("The text is 84 and the pointer is 0x\w{0,32}", regex=True).exit(0)
+    test.stdout("The text is 84 and the pointer is 0x[0-9a-f]{4,32}", regex=True).exit(0)
